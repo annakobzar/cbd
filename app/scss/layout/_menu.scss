@@ -1,0 +1,141 @@
+.menu {
+  &__toggle {
+    display: none;
+
+    &:checked {
+      + .menu__label {
+        .menu__line {
+          display: none;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+          top: 11px;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          bottom: 11px;
+        }
+
+        ~ .menu__list {
+          left: 0;
+          //   top: 80px;
+        }
+      }
+    }
+  }
+
+  &__label {
+    @include size(35px, 25px);
+    // @include pos(relative, $t: 20px, $l: 15px);
+    @include pos(relative);
+
+    display: block;
+
+    &::before,
+    &::after {
+      @include size(100%, 2px);
+      @include pos($l: 0);
+
+      content: "";
+      background: purple;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &__line {
+    @include size(100%, 2px);
+    @include pos($l: 0, $t: 46%);
+    background: purple;
+  }
+
+  &__link {
+    text-decoration: none;
+    // font-size: 20px;
+    // font-weight: 600;
+    color: #fff;
+  }
+}
+
+// mobile
+@media (max-width: $mobile) {
+  .menu {
+    &__list {
+      //   @include size(190px, 50%);
+      @include size(190px, 100%);
+      @include pos(fixed, $t: 0, $l: -190px, $z: -1);
+
+      background-color: salmon;
+      opacity: 0.8;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    &__item {
+      margin: 35px 0;
+    }
+  }
+}
+
+// desktop
+@media (min-width: $mobile) {
+  .menu {
+    &__label {
+      display: none;
+    }
+
+    &__item {
+      &:last-child {
+        display: none;
+      }
+    }
+
+    &__list {
+      @include size(415px, 100%);
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__link {
+      color: #fff;
+      position: relative;
+      transition: all 0.3s;
+
+      &::after {
+        @include size(0, 2px);
+        @include align(true, true, absolute);
+
+        content: "";
+        background-color: orange;
+        transition: all 0.3s;
+      }
+
+      &:hover,
+      &.menu__link--active {
+        color: #fff;
+
+        &::after {
+          width: 110%;
+        }
+      }
+
+      &--active {
+        color: orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.info {
+  margin-bottom: 40px;
+
+  &__title {
+    // font: 700 14px $title;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__tabs {
+    border-bottom-width: 2px;
+    margin-bottom: 30px;
+
+    .nav-link {
+      border: none;
+      color: #999;
+      //   font: 700 12px $title;
+      text-transform: uppercase;
+      padding: 0 10px 15px;
+      position: relative;
+
+      &::after {
+        @include pos($b: -1px, $l: 50%);
+        @include size(0, 2px);
+        content: "";
+        background-color: transparent;
+        transition: all 0.3s;
+      }
+
+      &.active::after {
+        background-color: green;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}

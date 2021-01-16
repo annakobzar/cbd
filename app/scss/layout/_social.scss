@@ -1,0 +1,24 @@
+.social {
+  &__item {
+    @include size(40px);
+    font-size: 15px;
+    text-align: center;
+    margin-right: 10px;
+    border: 1px solid red;
+    border-radius: 50%;
+    line-height: 40px;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: grey;
+      .social__icon {
+        color: grey;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: red;
+  }
+}

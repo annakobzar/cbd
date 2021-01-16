@@ -1,0 +1,64 @@
+.navigation {
+  @include size(100%, 80px);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  // background-color: aquamarine;
+  padding: 30px 0 30px 15px;
+  border-bottom: 2px solid #000;
+  z-index: 99999;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin: 0 25px;
+    position: relative;
+
+    &::before {
+      @include size(2px, 80px);
+      @include pos($l: -25px, $t: -30px);
+      content: "";
+      background-color: #000;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &--scrolled {
+    background-color: aquamarine;
+  }
+}
+
+// mobile
+@media (max-width: $mobile) {
+  .navigation {
+    padding-right: 15px;
+    &__list {
+      display: none;
+    }
+
+    &__list--mobile {
+      padding: 0 25px;
+    }
+
+    &__link-text {
+      &--mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+// desktop
+@media (min-width: $mobile) {
+  .navigation {
+    &__list--mobile {
+      display: none;
+    }
+  }
+}

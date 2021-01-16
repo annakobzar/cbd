@@ -1,0 +1,23 @@
+.gallery {
+  &__buttons {
+    @include size(80px, 40px);
+    @include pos($t: 95%, $l: 50%);
+
+    transform: translateX(-50%);
+  }
+
+  &__button {
+    @include size(40px);
+    // @include pos($t: 96%);
+    border: 1px solid red;
+
+    color: red;
+
+    &--prev {
+    }
+
+    &--next {
+      border-left: none;
+    }
+  }
+}
