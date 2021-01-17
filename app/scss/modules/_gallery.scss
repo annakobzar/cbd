@@ -1,17 +1,54 @@
 .gallery {
-  &__buttons {
-    @include size(80px, 40px);
-    @include pos($t: 95%, $l: 50%);
+  background-color: $green;
 
+  &__wrap {
+    position: relative;
+  }
+
+  &__img {
+    opacity: 0.6;
+  }
+
+  &__content {
+    @include align(true, true, absolute);
+  }
+
+  &__review {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-size: 22px;
+    line-height: 40px;
+    color: #fff;
+    letter-spacing: 4.4px;
+    margin-bottom: 30px;
+  }
+
+  &__sigh {
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+
+    &:before {
+      @include size(45px, 1px);
+      @include pos($t: 50%, $r: 55%);
+      content: "";
+      background-color: #fff;
+    }
+  }
+
+  &__buttons {
+    @include size(130px, 50px);
+    @include pos($b: 0, $l: 50%);
     transform: translateX(-50%);
+    font-size: 20px;
   }
 
   &__button {
-    @include size(40px);
-    // @include pos($t: 96%);
-    border: 1px solid red;
-
-    color: red;
+    @include size(65px, 50px);
+    border: 1px solid $white;
+    color: $white;
 
     &--prev {
     }

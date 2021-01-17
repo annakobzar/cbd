@@ -1,0 +1,51 @@
+.contact {
+  background-color: $white;
+  padding: 170px 0 50px;
+  text-align: center;
+
+  &__item {
+    font-size: 14px;
+    letter-spacing: 3.92px;
+    color: $green;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__title {
+    color: $black;
+    font-size: 18px;
+    letter-spacing: 2.7px;
+    margin-bottom: 30px;
+  }
+
+  &__right {
+    font-size: 11px;
+    color: $green;
+    text-transform: uppercase;
+    letter-spacing: 3.08px;
+  }
+
+  &__logo {
+    color: $darkgreen;
+    display: block;
+    position: relative;
+    margin-bottom: 55px;
+
+    &::before,
+    &::after {
+      @include size(30%, 1px);
+      @include pos($t: 50%);
+      content: "";
+      background-color: $darkgreen;
+    }
+
+    &::before {
+      right: 0;
+    }
+
+    &::after {
+      left: 0;
+    }
+  }
+}

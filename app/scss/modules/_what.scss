@@ -1,0 +1,39 @@
+.what {
+  background-color: $white;
+  padding: 95px 0 110px;
+
+  &__wrap {
+    position: relative;
+    margin-bottom: 100px;
+  }
+
+  &__content {
+    @include pos($t: 50px, $l: 50%);
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+}
+
+// mobile
+@media (max-width: $mobile) {
+  .what {
+    &__wrap {
+      width: 50%;
+    }
+
+    &__frame {
+      @include size(380px, 160px);
+    }
+
+    &__content {
+      left: 100%;
+    }
+
+    &__pic {
+      width: 360px;
+    }
+  }
+}

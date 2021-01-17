@@ -1,11 +1,21 @@
 .social {
+  margin: 0 20%;
+  position: relative;
+  margin-bottom: 115px;
+
+  &:after {
+    @include pos($l: 65%, $b: -60px);
+    @include size(1px, 55px);
+
+    content: "";
+    background-color: $darkgreen;
+  }
+
   &__item {
     @include size(40px);
-    font-size: 15px;
+    font-size: 22px;
     text-align: center;
     margin-right: 10px;
-    border: 1px solid red;
-    border-radius: 50%;
     line-height: 40px;
     transition: all 0.3s;
 
@@ -19,6 +29,6 @@
 
   &__link {
     text-decoration: none;
-    color: red;
+    color: $darkgreen;
   }
 }

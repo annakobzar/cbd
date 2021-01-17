@@ -1,5 +1,29 @@
+.faqs {
+  padding: 130px 0 145px;
+  background-color: $white;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    color: $green;
+    font-weight: 300;
+    padding: 30px 0 0;
+    letter-spacing: 5.04px;
+    border-top: 1px solid #eaedde;
+  }
+}
+
+.plus {
+  margin-right: 25px;
+}
+
 .accordion {
   .card {
+    background-color: $white;
     border: none;
     margin-bottom: 20px;
 
@@ -8,20 +32,20 @@
       border: none;
       padding: 0 0 10px;
 
-      h3 {
-        text-transform: uppercase;
-        // font: 700 14px $title;
+      div {
         cursor: pointer;
         transition: all 0.3s;
 
         &[aria-expanded="true"] {
-          color: green;
+          border-bottom: none;
         }
       }
     }
 
     &-body {
-      padding: 0 0 40px;
+      padding: 20 45px;
+      font-size: 18px;
+      font-weight: 300;
     }
   }
 }

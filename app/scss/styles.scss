@@ -10,7 +10,9 @@
 @import "layout/_menu";
 @import "layout/_social";
 @import "layout/_btns";
-// @import "layout/_tabs";
+@import "layout/_tabs";
+@import "layout/_typography";
+@import "layout/_logo";
 
 // Page styles
 @import "modules/_header";
@@ -18,3 +20,5 @@
 @import "modules/_products";
 @import "modules/_faqs";
 @import "modules/_gallery";
+@import "modules/_footer";
+@import "modules/_what";

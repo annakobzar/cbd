@@ -1,26 +1,39 @@
 .navigation {
   @include size(100%, 80px);
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  // background-color: aquamarine;
-  padding: 30px 0 30px 15px;
-  border-bottom: 2px solid #000;
+  padding: 20px 30px 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   z-index: 99999;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.96px;
+  align-items: baseline;
 
   &__list {
     display: flex;
   }
 
   &__item {
-    margin: 0 25px;
+    margin: 0 30px;
     position: relative;
+    transition: all 0.3s;
 
     &::before {
-      @include size(2px, 80px);
-      @include pos($l: -25px, $t: -30px);
+      @include size(1px, 80px);
+      @include pos($l: -30px, $t: -34px);
       content: "";
-      background-color: #000;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $green;
+    }
+
+    &__logo {
     }
   }
 
@@ -30,7 +43,8 @@
   }
 
   &--scrolled {
-    background-color: aquamarine;
+    // background-color: rgba(255, 255, 255, 0.4);
+    background-color: $green;
   }
 }
 
@@ -50,6 +64,12 @@
       &--mobile {
         display: none;
       }
+    }
+
+    &__link-icon {
+      color: #000;
+      font-weight: 500;
+      font-size: 20px;
     }
   }
 }

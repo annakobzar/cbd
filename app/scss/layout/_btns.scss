@@ -1,20 +1,19 @@
 .button {
-  @include size(200px, 60px);
+  @include size(270px, 70px);
 
   display: inline-block;
   font-family: $font;
-  font-size: 16px;
-  color: red;
+  font-size: 20px;
+  color: #fff;
 
   text-transform: uppercase;
   text-decoration: none;
   background-color: transparent;
-  line-height: 60px;
-  border: 1px solid red;
+  line-height: 70px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   text-align: left;
-  padding: 0 20px;
+  padding: 0 40px;
   position: relative;
-
   transition: all 0.3s;
 
   &__text {
@@ -22,40 +21,84 @@
     position: relative;
 
     &:after {
-      @include size(50px, 2px);
-      @include pos($r: -60px, $t: 29px);
+      @include size(45px, 1px);
+      @include pos($r: -60px, $t: 35px);
       content: "";
-      background-color: red;
+      background-color: #fff;
       transition: all 0.5s ease;
     }
   }
 
   &:hover {
+    color: rgba(255, 255, 255, 0.4);
+
     .button__text:after {
       width: 0;
-      right: -110px;
-      //   background-color: green;
+      right: -90px;
+      opacity: 0;
     }
   }
 }
 
 .scroll {
-  @include size(40px);
+  @include size(25px);
 
   display: block;
   text-decoration: none;
   font-size: 14px;
-  color: green;
-  font-weight: 300;
-  //   border: 1px solid green;
-  //   border-radius: 50%;
+  color: $white;
   text-align: center;
-  line-height: 40px;
+  line-height: 25px;
   margin: 0 auto;
   transition: all 0.3s;
 
   &:hover {
-    color: red;
-    // border-color: red;
+    color: $green;
+  }
+}
+
+.form {
+  @include size(370px, 56px);
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  &__input {
+    @include size(100%);
+    display: inline-block;
+    border: 1px solid $green;
+    border-radius: 0;
+
+    color: $black;
+
+    &::placeholder {
+      color: $green;
+      font-size: 16px;
+      letter-spacing: 4.48px;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border-color: $green;
+      border-left: 3px solid $darkgreen;
+      color: darkgreen;
+    }
+  }
+
+  &__submit {
+    @include size(22.3%, 56px);
+
+    line-height: 56px;
+    font-size: 14px;
+    color: $green;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid $green;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $darkgreen;
+    }
   }
 }

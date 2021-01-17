@@ -1,0 +1,10 @@
+.logo {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 30px;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $green;
+  }
+}

@@ -28,7 +28,6 @@
 
   &__label {
     @include size(35px, 25px);
-    // @include pos(relative, $t: 20px, $l: 15px);
     @include pos(relative);
 
     display: block;
@@ -39,7 +38,7 @@
       @include pos($l: 0);
 
       content: "";
-      background: purple;
+      background: $green;
       transition: all 0.2s;
     }
 
@@ -55,13 +54,11 @@
   &__line {
     @include size(100%, 2px);
     @include pos($l: 0, $t: 46%);
-    background: purple;
+    background: $green;
   }
 
   &__link {
     text-decoration: none;
-    // font-size: 20px;
-    // font-weight: 600;
     color: #fff;
   }
 }
@@ -70,13 +67,10 @@
 @media (max-width: $mobile) {
   .menu {
     &__list {
-      //   @include size(190px, 50%);
       @include size(190px, 100%);
       @include pos(fixed, $t: 0, $l: -190px, $z: -1);
-
-      background-color: salmon;
+      background-color: rgba(255, 255, 255, 0.6);
       opacity: 0.8;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -86,6 +80,10 @@
 
     &__item {
       margin: 35px 0;
+    }
+
+    &__link {
+      color: #000;
     }
   }
 }
@@ -104,7 +102,7 @@
     }
 
     &__list {
-      @include size(415px, 100%);
+      @include size(370px, 100%);
 
       display: flex;
       justify-content: space-between;
@@ -116,11 +114,11 @@
       transition: all 0.3s;
 
       &::after {
-        @include size(0, 2px);
+        @include size(0, 1px);
         @include align(true, true, absolute);
 
         content: "";
-        background-color: orange;
+        background-color: $green;
         transition: all 0.3s;
       }
 
@@ -129,12 +127,12 @@
         color: #fff;
 
         &::after {
-          width: 110%;
+          width: 130%;
         }
       }
 
       &--active {
-        color: orange;
+        color: $green;
       }
     }
   }
